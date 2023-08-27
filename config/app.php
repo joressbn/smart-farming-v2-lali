@@ -86,7 +86,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr', //default app language
+    'locales' => ['fr', 'en'], // languages availables for the app
 
     /*
     |--------------------------------------------------------------------------
