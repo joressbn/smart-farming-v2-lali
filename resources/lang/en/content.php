@@ -15,5 +15,9 @@ return [
 
     'user' => 'user',
     'users' => 'users',
+    'project' => 'project',
+    'projects' => 'projects',
+    'alert' => 'alert',
+    'alerts' => 'alerts'
     // to complete
 ];
