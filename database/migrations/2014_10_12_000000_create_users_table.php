@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->enum('usertype',['superadmin','admin','user'])->default('user');
+            $table->enum('account_status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamp('last_seen')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

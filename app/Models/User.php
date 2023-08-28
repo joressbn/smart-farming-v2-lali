@@ -14,13 +14,34 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
+    /**
+     * The attributes that are not mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'id'
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'email',
+        'usertype',
+        'account_status',
+        'password',
+    ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

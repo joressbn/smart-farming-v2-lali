@@ -6,19 +6,20 @@
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card w-85 mx-auto rounded-2">
                     <div class="w-65 mx-auto">
-                        <img src="{{asset('../assets/img/logos/logo-sf-nobg.png')}}" class="mb-0 pt-3 w-100 align-content-center mx-auto" alt="">
+                        <img src="{{asset('../assets/img/logos/logo-sf-nobg.png')}}"
+                             class="mb-0 pt-3 w-100 align-content-center mx-auto" alt="">
                     </div>
                     <div class="card-header text-center text-gradient text-success pt-4">
                         <h2>{{ __('messages.welcomeHome') }}</h2>
                     </div>
-                    <div class="card-header text-center pt-4">
+                    <div class="card-header text-center pt-4" style="display: none">
                         <h5>{{ __('Register with') }}</h5>
                     </div>
-                    <div class="row px-xl-5 px-sm-4 px-3">
+                    <div class="row px-xl-5 px-sm-4 px-3" style="display: none">
                         <div class="col-3 ms-auto px-1">
                             <a class="btn btn-outline-light w-100" href="javascript:;">
                                 <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1"
-                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink32">
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink=    "http://www.w3.org/1999/xlink32">
                                     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="facebook-3" transform="translate(3.000000, 3.000000)"
                                            fill-rule="nonzero">
@@ -106,7 +107,16 @@
                                 @error('password')
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
-                            <div class="form-check form-check-info text-left">
+                            <div class="mb-3">
+                                <div class="@error('password') border border-danger rounded-3 @enderror">
+                                    <input wire:model="password" type="password" class="form-control"
+                                           placeholder="Confirm password" aria-label="Password"
+                                           aria-describedby="password-addon">
+                                </div>
+                                @error('password')
+                                <div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+                            <div class="form-check form-check-info text-left" style="display: none">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                        checked>
                                 <label class="form-check-label" for="flexCheckDefault">
@@ -117,14 +127,13 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Sign up</button>
                             </div>
                             <p class="text-sm mt-3 mb-0">{{ __('Already have an account? ') }}<a
                                     href="{{ route('login') }}"
-                                    class="text-dark font-weight-bolder">{{ __('Sign in') }}</a>
+                                    class="text-success text-gradient font-weight-bolder">{{ __('Sign in') }}</a>
                             </p>
                         </form>
-
                     </div>
                 </div>
             </div>
