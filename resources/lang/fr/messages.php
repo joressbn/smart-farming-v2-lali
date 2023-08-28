@@ -13,7 +13,9 @@ return [
     |
     */
 
+    'enterCredsToLogin' => 'Veuillez entrer vos informations de connexion',
     'welcome' => 'Bienvenue',
-    'welcome back' => "Bon retour sur l'application"
+    'welcomeHome' => "Bienvenue sur notre application ",
+    'welcomeBack' => "Bon retour sur notre application !"
 
 ];
