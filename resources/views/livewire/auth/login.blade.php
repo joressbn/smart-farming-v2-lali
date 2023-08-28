@@ -1,7 +1,7 @@
 @section('css')
 <style>
     body{
-        background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url('../assets/img/background/serrebg1.jpg');"
+        background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");"
     }
 </style>
 @endsection
