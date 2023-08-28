@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'alreadyRegistred' => "Vous avez déjà un compte ?",
     'enterCredsToLogin' => 'Veuillez entrer vos informations de connexion',
     'welcome' => 'Bienvenue',
     'welcomeHome' => "Bienvenue sur notre application ",

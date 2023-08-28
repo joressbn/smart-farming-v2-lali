@@ -1,3 +1,16 @@
+@section('css')
+    <style>
+        body {
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");
+        "
+        }
+    </style>
+@endsection
 <section>
     <div class="page-header pt-5 pb-11">
     </div>
@@ -6,15 +19,16 @@
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card w-85 mx-auto rounded-2">
                     <div class="w-65 mx-auto">
-                        <img src="{{asset('../assets/img/logos/logo-sf-nobg.png')}}" class="mb-0 pt-3 w-100 align-content-center mx-auto" alt="">
+                        <img src="{{asset('../assets/img/logos/logo-sf-nobg.png')}}"
+                             class="mb-0 pt-3 w-100 align-content-center mx-auto" alt="">
                     </div>
                     <div class="card-header text-center text-gradient text-success pt-4">
                         <h2>{{ __('messages.welcomeHome') }}</h2>
                     </div>
-                    <div class="card-header text-center pt-4">
+                    <div class="card-header text-center pt-4" style="display: none">
                         <h5>{{ __('Register with') }}</h5>
                     </div>
-                    <div class="row px-xl-5 px-sm-4 px-3">
+                    <div class="row px-xl-5 px-sm-4 px-3" style="display: none">
                         <div class="col-3 ms-auto px-1">
                             <a class="btn btn-outline-light w-100" href="javascript:;">
                                 <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1"
@@ -79,9 +93,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-
                         <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
                             <div class="mb-3">
+                                <label for="name" class="text-gradient text-success">{{ __('content.Name') }}</label>
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
                                     <input wire:model="name" type="text" class="form-control" placeholder="Name"
                                            aria-label="Name" aria-describedby="email-addon">
@@ -90,6 +104,7 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="email" class="text-gradient text-success">{{ __('Email') }}</label>
                                 <div class="@error('email') border border-danger rounded-3 @enderror">
                                     <input wire:model="email" type="email" class="form-control" placeholder="Email"
                                            aria-label="Email" aria-describedby="email-addon">
@@ -98,9 +113,20 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="password" class="text-gradient text-success">{{ __('Password') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <input wire:model="password" type="password" class="form-control"
                                            placeholder="Password" aria-label="Password"
+                                           aria-describedby="password-addon">
+                                </div>
+                                @error('password')
+                                <div class="text-danger">{{ $message }}</div> @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="text-gradient text-success">{{ __('Password confirmation') }}</label>
+                                <div class="@error('password') border border-danger rounded-3 @enderror">
+                                    <input wire:model="password_confirmation" type="password" class="form-control"
+                                           placeholder="Confirm Password" aria-label="Password"
                                            aria-describedby="password-addon">
                                 </div>
                                 @error('password')
@@ -117,14 +143,13 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">{{ __('content.signUp') }}</button>
                             </div>
-                            <p class="text-sm mt-3 mb-0">{{ __('Already have an account? ') }}<a
+                            <p class="text-sm mt-3 mb-0">{{ __('messages.alreadyRegistred') }}<a
                                     href="{{ route('login') }}"
-                                    class="text-dark font-weight-bolder">{{ __('Sign in') }}</a>
+                                    class="text-success text-gradient font-weight-bolder"> {{ __('content.signIn') }}</a>
                             </p>
                         </form>
-
                     </div>
                 </div>
             </div>

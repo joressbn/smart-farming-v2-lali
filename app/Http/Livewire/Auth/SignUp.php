@@ -11,11 +11,12 @@ class SignUp extends Component
     public $name = '';
     public $email = '';
     public $password = '';
+    public $password_confirmation = '';
 
     protected $rules = [
         'name' => 'required|min:3',
         'email' => 'required|email:rfc,dns|unique:users',
-        'password' => 'required|min:6'
+        'password' => 'required|min:8|confirmed',
     ];
 
     public function mount() {

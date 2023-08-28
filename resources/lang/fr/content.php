@@ -12,11 +12,19 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'user' => 'utilisateur',
-    'users' => 'utilisateurs',
+    'alert' => 'alerte',
+    'alerts' => 'alertes',
+    'email' => 'email',
+    'Email' => 'Email',
+    'name' => 'nom',
+    'Name' => 'Nom',
+    'password' => 'mot de passe',
+    'Password' => 'Mot de passe',
+    'Password confirmation' => 'Confirmation de mot de passe',
     'project' => 'projet',
     'projects' => 'projets',
-    'alert' => 'alerte',
-    'alerts' => 'alertes'
+    'signIn' => 'Se connecter',
+    'signUp' => "S'enregistrer",
+    'user' => 'utilisateur',
+    'users' => 'utilisateurs',
 ];
