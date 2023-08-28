@@ -1,4 +1,11 @@
-<section>
+@section('css')
+<style>
+    body{
+        background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url('../assets/img/background/serrebg1.jpg');"
+    }
+</style>
+@endsection
+<section >
     <div class="page-header section-height-75 h-100">
         <div class="container">
             <div class="row">

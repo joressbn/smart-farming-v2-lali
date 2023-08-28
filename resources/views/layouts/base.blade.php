@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8" />
@@ -26,10 +26,10 @@
     <!-- Alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @livewireStyles
-
+    @yield('css')
 </head>
 
-<body class="g-sidenav-show" style="background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url('../assets/img/background/serrebg1.jpg');">
+<body class="g-sidenav-show" >
 
     {{ $slot }}
 
