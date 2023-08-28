@@ -1,4 +1,11 @@
-<section>
+@section('css')
+<style>
+    body{
+        background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");"
+    }
+</style>
+@endsection
+<section >
     <div class="page-header section-height-75 h-100">
         <div class="container">
             <div class="row">
@@ -15,7 +22,7 @@
                         <div class="card-body">
                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
                                 <div class="mb-3">
-                                    <label for="email">{{ __('Email') }}</label>
+                                    <label for="email" class="text-gradient text-success">{{ __('content.Email') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
                                         <input wire:model="email" id="email" type="email" class="form-control"
                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon">
@@ -24,7 +31,7 @@
                                     <div class="text-danger">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password">{{ __('Password') }}</label>
+                                    <label for="password" class="text-gradient text-success">{{ __('content.Password') }}</label>
                                     <div class="@error('password')border border-danger rounded-3 @enderror">
                                         <input wire:model="password" id="password" type="password" class="form-control"
                                                placeholder="Password" aria-label="Password"
@@ -40,7 +47,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="submit"
-                                            class="btn bg-gradient-success w-100 mt-4 mb-0">{{ __('Sign in') }}</button>
+                                            class="btn bg-gradient-success w-100 mt-4 mb-0">{{ __('content.signIn') }}</button>
                                 </div>
                             </form>
                         </div>

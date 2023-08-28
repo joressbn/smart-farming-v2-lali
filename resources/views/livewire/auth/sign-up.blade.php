@@ -1,3 +1,16 @@
+@section('css')
+    <style>
+        body {
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");
+        "
+        }
+    </style>
+@endsection
 <section>
     <div class="page-header pt-5 pb-11">
     </div>
@@ -19,7 +32,7 @@
                         <div class="col-3 ms-auto px-1">
                             <a class="btn btn-outline-light w-100" href="javascript:;">
                                 <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1"
-                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink=    "http://www.w3.org/1999/xlink32">
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink32">
                                     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="facebook-3" transform="translate(3.000000, 3.000000)"
                                            fill-rule="nonzero">
@@ -80,9 +93,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-
                         <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
                             <div class="mb-3">
+                                <label for="name" class="text-gradient text-success">{{ __('content.Name') }}</label>
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
                                     <input wire:model="name" type="text" class="form-control" placeholder="Name"
                                            aria-label="Name" aria-describedby="email-addon">
@@ -91,6 +104,7 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="email" class="text-gradient text-success">{{ __('Email') }}</label>
                                 <div class="@error('email') border border-danger rounded-3 @enderror">
                                     <input wire:model="email" type="email" class="form-control" placeholder="Email"
                                            aria-label="Email" aria-describedby="email-addon">
@@ -99,6 +113,7 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="password" class="text-gradient text-success">{{ __('Password') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <input wire:model="password" type="password" class="form-control"
                                            placeholder="Password" aria-label="Password"
@@ -108,15 +123,16 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
+                                <label for="password_confirmation" class="text-gradient text-success">{{ __('Password confirmation') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
-                                    <input wire:model="password" type="password" class="form-control"
-                                           placeholder="Confirm password" aria-label="Password"
+                                    <input wire:model="password_confirmation" type="password" class="form-control"
+                                           placeholder="Confirm Password" aria-label="Password"
                                            aria-describedby="password-addon">
                                 </div>
                                 @error('password')
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
-                            <div class="form-check form-check-info text-left" style="display: none">
+                            <div class="form-check form-check-info text-left">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                        checked>
                                 <label class="form-check-label" for="flexCheckDefault">
@@ -127,11 +143,11 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">Sign up</button>
+                                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">{{ __('content.signUp') }}</button>
                             </div>
-                            <p class="text-sm mt-3 mb-0">{{ __('Already have an account? ') }}<a
+                            <p class="text-sm mt-3 mb-0">{{ __('messages.alreadyRegistred') }}<a
                                     href="{{ route('login') }}"
-                                    class="text-success text-gradient font-weight-bolder">{{ __('Sign in') }}</a>
+                                    class="text-success text-gradient font-weight-bolder"> {{ __('content.signIn') }}</a>
                             </p>
                         </form>
                     </div>
