@@ -16,16 +16,18 @@ class SignUp extends Component
     protected $rules = [
         'name' => 'required|min:3',
         'email' => 'required|email:rfc,dns|unique:users',
-        'password' => 'required|min:8|confirmed',
+        'password' => 'required|min:8|confirmed|',
     ];
 
-    public function mount() {
-        if(auth()->user()){
+    public function mount()
+    {
+        if (auth()->user()) {
             redirect('/dashboard');
         }
     }
 
-    public function register() {
+    public function register()
+    {
         $this->validate();
         $user = User::create([
             'name' => $this->name,

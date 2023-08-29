@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 
 class User extends Authenticatable
@@ -38,11 +39,6 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = Hash::make($value);
-    }
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -61,4 +57,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function isAdmin()
+    {
+        return $this->usertype === 'admin';
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->usertype === 'superadmin';
+    }
 }
