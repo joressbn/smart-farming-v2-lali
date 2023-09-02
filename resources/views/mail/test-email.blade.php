@@ -1,2 +1,5 @@
-Hey !
-Mail parameters are good, it works
+Bonjour à vous
+
+Votre compte sur notre plateforme a bien été crée
+
+Cordialement

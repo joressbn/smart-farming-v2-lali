@@ -3,7 +3,7 @@
         body {
             background-position: center;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");
@@ -12,15 +12,13 @@
     </style>
 @endsection
 <section>
-    <div class="page-header pt-5 pb-11">
-    </div>
-    <div class="align-items-start section-height-75 pb-11 m-3 border-radius-lg">
-        <div class="row mt-lg-n10 mt-md-n11 mt-n10">
-            <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-                <div class="card w-85 mx-auto rounded-2">
-                    <div class="w-65 mx-auto">
+    <div class="page-header section-height-75 h-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto bg-white rounded-2 mt-6 mb-5">
+                    <div class="card card-plain mt-4 mb-0">
                         <img src="{{asset('../assets/img/logos/logo-sf-nobg.png')}}"
-                             class="mb-0 pt-3 w-100 align-content-center mx-auto" alt="">
+                             class="mb-0 w-75 align-content-center mx-auto" alt="">
                     </div>
                     <div class="card-header text-center text-gradient text-success pt-4">
                         <h2>{{ __('messages.welcomeHome') }}</h2>
@@ -32,7 +30,8 @@
                         <div class="col-3 ms-auto px-1">
                             <a class="btn btn-outline-light w-100" href="javascript:;">
                                 <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1"
-                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink32">
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink32">
                                     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="facebook-3" transform="translate(3.000000, 3.000000)"
                                            fill-rule="nonzero">
@@ -95,7 +94,8 @@
                     <div class="card-body">
                         <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
                             <div class="mb-3">
-                                <label for="name" class="text-gradient text-success">{{ __('content.Name') }}</label>
+                                <label for="name"
+                                       class="text-gradient text-success">{{ __('content.Name') }}</label>
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
                                     <input wire:model="name" type="text" class="form-control" placeholder="Name"
                                            aria-label="Name" aria-describedby="email-addon">
@@ -113,7 +113,8 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="text-gradient text-success">{{ __('Password') }}</label>
+                                <label for="password"
+                                       class="text-gradient text-success">{{ __('Password') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <input wire:model="password" type="password" class="form-control"
                                            placeholder="Password" aria-label="Password"
@@ -123,7 +124,8 @@
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="password_confirmation" class="text-gradient text-success">{{ __('Password confirmation') }}</label>
+                                <label for="password_confirmation"
+                                       class="text-gradient text-success">{{ __('Password confirmation') }}</label>
                                 <div class="@error('password') border border-danger rounded-3 @enderror">
                                     <input wire:model="password_confirmation" type="password" class="form-control"
                                            placeholder="Confirm Password" aria-label="Password"
@@ -132,10 +134,10 @@
                                 @error('password')
                                 <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
-                            <div class="form-check form-check-info text-left">
+                            <div class="form-check form-check-info text-left" style="display: none">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                        checked>
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <label class="form-check-label text-success text-gradient" for="flexCheckDefault">
                                     {{ __('I agree the') }} <a href="javascript:;"
                                                                class="text-dark font-weight-bolder">{{ __('Terms
                                           and
@@ -143,7 +145,8 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-success w-100 my-4 mb-2">{{ __('content.signUp') }}</button>
+                                <button type="submit"
+                                        class="btn bg-gradient-success w-100 my-4 mb-2">{{ __('content.signUp') }}</button>
                             </div>
                             <p class="text-sm mt-3 mb-0">{{ __('messages.alreadyRegistred') }}<a
                                     href="{{ route('login') }}"

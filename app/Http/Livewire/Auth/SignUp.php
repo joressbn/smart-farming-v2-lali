@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Mail\RegistrationMail;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -36,6 +38,8 @@ class SignUp extends Component
         ]);
 
         auth()->login($user);
+
+        Mail::to($this->email)->send(new RegistrationMail());
 
         return redirect('/dashboard');
     }

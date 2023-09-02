@@ -1,5 +1,4 @@
 <div>
-    @include('layouts.navbars.guest.login')
     <div class="page-header section-height-75">
         <div class="container">
             <div class="row">
@@ -10,7 +9,6 @@
                             <p>
                         </div>
                         <div class="card-body">
-
                             <form wire:submit.prevent="resetPassword" action="#" method="POST" role="form text-left">
                                 <div>
                                     <label for="email">{{ __('Email') }}</label>
@@ -42,7 +40,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="submit"
-                                        class="btn bg-gradient-info w-100 mt-4 mb-0">{{ __('Reset Password') }}</button>
+                                        class="btn bg-gradient-success w-100 mt-4 mb-0">{{ __('Reset Password') }}</button>
                                 </div>
                             </form>
 
@@ -74,7 +72,7 @@
                 <div class="col-md-6">
                     <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
                         <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
-                            style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+                            style="background-image:url("{{asset('../assets/img/background/serrebg1.jpg')}}")"></div>
                     </div>
                 </div>
             </div>

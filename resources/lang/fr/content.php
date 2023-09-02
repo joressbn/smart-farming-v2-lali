@@ -27,4 +27,5 @@ return [
     'signUp' => "S'enregistrer",
     'user' => 'utilisateur',
     'users' => 'utilisateurs',
+    'rememberMe' => "Se souvenir de moi"
 ];

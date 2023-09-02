@@ -8,7 +8,7 @@
                   </a>
               </div>
           </div>
-          <div class="row">
+          <div class="row" style="display: none">
               <div class="col-8 mx-auto text-center mt-0">
                   <p class="mb-0 text-secondary">
                       Copyright © {{ now()->year }} by SMART FARMING DEV TEAM ❤

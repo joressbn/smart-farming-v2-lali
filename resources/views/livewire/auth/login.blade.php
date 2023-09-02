@@ -1,11 +1,12 @@
 @section('css')
 <style>
     body{
-        background-position: center; width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");"
+        background-position: center; width: 100%; height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: url("{{asset('../assets/img/background/serrebg1.jpg')}}");
+    "
     }
 </style>
 @endsection
-<section >
+<section>
     <div class="page-header section-height-75 h-100">
         <div class="container">
             <div class="row">
@@ -43,7 +44,7 @@
                                 <div class="form-check form-switch">
                                     <input wire:model="remember_me" class="form-check-input" type="checkbox"
                                            id="rememberMe">
-                                    <label class="form-check-label" for="rememberMe">{{ __('Remember me') }}</label>
+                                    <label class="form-check-label text-gradient text-success for="rememberMe">{{ __('content.rememberMe') }}</label>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit"
