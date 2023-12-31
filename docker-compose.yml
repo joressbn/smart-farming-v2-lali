@@ -25,11 +25,11 @@ services:
     image: mysql:8.0
     container_name: Database
     environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_DATABASE: "${DB_DATABASE}"
-      MYSQL_USER: "${DB_USERNAME}"
       MYSQL_ROOT: "root"
       MYSQL_PASSWORD: "${DB_PASSWORD}"
-      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "SFr00tPWD"
     volumes:
       - db:/var/lib/mysql
     ports:
@@ -46,7 +46,7 @@ services:
       PMA_ARBITRARY: 1
     restart: always
     ports:
-      - 8081:80
+      - 8080:80
 
   mailpit:
     image: axllent/mailpit
